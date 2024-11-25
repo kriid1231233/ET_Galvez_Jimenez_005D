@@ -25,10 +25,10 @@ export interface AlumnosM{
 export interface misQr{
     nombreusuario: string;
     emailusuario: string;
-    rut: string;
+    rutusuario: string;
     nombreEvento:string;
-    fecha:string;
-    lugar:string;
+    fechaevento:string;
+    lugarevento:string;
 }
 
 //get, put, delete
@@ -36,8 +36,8 @@ export interface QrAll{
     id:string;
     nombreusuario: string;
     emailusuario: string;
-    rut: string;
+    rutusuario: string;
     nombreEvento:string;
-    fecha:string;
-    lugar:string;
+    fechaevento:string;
+    lugarevento:string;
 }

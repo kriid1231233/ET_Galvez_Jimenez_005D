@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gestión de Eventos</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button 
+        defaultHref="/iniestudiante"
+        text=""
+        color="dark"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Botón para crear un nuevo evento -->
+  <div *ngIf="!evento && !creandoEvento" style="text-align: center;">
+    <ion-button  (click)="nuevoEvento()" class="boton">Crear Nuevo Evento</ion-button>
+  </div>
+
+  <!-- Loader mientras no hay un evento seleccionado o formulario para crear -->
+  <div *ngIf="!event && !creandoEvento">
+    <ion-spinner class="spinner-container"></ion-spinner>
+  </div>
+
+  <!-- Formulario para actualizar o crear un evento -->
+  <div *ngIf="evento || creandoEvento" style="text-align: center;">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nombre del Evento</ion-label>
+        <ion-input [(ngModel)]="event.nombreEvento"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Fecha</ion-label>
+        <ion-input [(ngModel)]="event.fecha" type="date"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Lugar</ion-label>
+        <ion-input [(ngModel)]="event.lugar"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-textarea [(ngModel)]="event.descripcion"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Imagen</ion-label>
+        <input type="file" (change)="onFileSelected($event)" />
+      </ion-item>
+
+      <ion-item>
+        <ion-img [src]="event.imagen || imagen"></ion-img>
+      </ion-item>
+    </ion-list>
+
+    <ion-button  *ngIf="evento" (click)="actualizarEvento()"  class="boton">Actualizar</ion-button>
+    <ion-button  *ngIf="evento" (click)="deleteEvento()"  class="boton">Eliminar</ion-button>
+    <ion-button  *ngIf="creandoEvento" (click)="guardarNuevoEvento()"  class="boton">Guardar Nuevo Evento</ion-button>
+  </div>
+
+  <!-- Lista de eventos si no hay un evento seleccionado ni formulario para crear -->
+  <ion-list *ngIf="!evento && !creandoEvento">
+    <ion-item *ngFor="let evento of eventos" (click)="selectEvento(evento)">
+      <ion-label>{{ evento.nombreEvento }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

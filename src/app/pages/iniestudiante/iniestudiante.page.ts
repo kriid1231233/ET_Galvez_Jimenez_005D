@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { Eventos,EventosM } from 'src/interfaces/eventos';
+import { Evento } from 'src/interfaces/eventos';
 import { ApicrudService } from 'src/app/services/apicrud.service';
 import { register } from 'swiper/element/bundle';
 register();
@@ -15,7 +15,7 @@ register();
 })
 export class IniestudiantePage implements OnInit {
 
-  Event:EventosM[]=[];
+  Event:Evento[]=[];
 
   constructor(private menu:MenuController,
     private alertcontroller: AlertController,

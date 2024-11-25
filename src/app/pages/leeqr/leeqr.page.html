@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button 
+        defaultHref="/iniestudiante"
+        text=""
+        color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Escanear Qr
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="!qr.scan">
+  <h2>RESULTADO: {{qr.scanResult}}</h2>
+</ion-content>
+
+<ion-footer>
+  <ion-button id="btn_qr" (click)="scaneo()">
+    ESCANEA
+  </ion-button>
+</ion-footer>

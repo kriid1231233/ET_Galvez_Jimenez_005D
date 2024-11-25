@@ -47,18 +47,19 @@ const routes: Routes = [
     canActivate: [AutorizadoGuard]
   },
   {
-    path: 'detalle-evento',
-    loadChildren: () => import('./pages/detalle-evento/detalle-evento.module').then( m => m.DetalleEventoPageModule),
-    canActivate: [AutorizadoGuard]
-  },
-  {
     path: 'historialdeeventos',
     loadChildren: () => import('./pages/historialdeeventos/historialdeeventos.module').then( m => m.HistorialdeeventosPageModule)
   },
   {
-    path: 'comentarevento',
-    loadChildren: () => import('./pages/comentarevento/comentarevento.module').then( m => m.ComentareventoPageModule)
+    path: 'actualizar-evento/:id',
+    loadChildren: () => import('./actualizar-evento/actualizar-evento.module').then( m => m.ActualizarEventoPageModule),
+    canActivate: [AutorizadoGuard]
   },
+  {
+    path: 'leeqr',
+    loadChildren: () => import('./pages/leeqr/leeqr.module').then( m => m.LeeqrPageModule)
+  },
+
 ];
 
 @NgModule({

@@ -24,7 +24,7 @@
 
 
   <ion-list>
-    <ion-card *ngFor="let e of Event" (click)="buscarEvento(e)">
+    <ion-card *ngFor="let e of Event" >
       <ion-card-header>
         <img src="{{ e.imagen }}"><br><br>
         <ion-card-title>{{ e.nombreEvento }}</ion-card-title>

@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ComentareventoPageRoutingModule } from './comentarevento-routing.module';
+import { LeeqrPageRoutingModule } from './leeqr-routing.module';
 
-import { ComentareventoPage } from './comentarevento.page';
+import { LeeqrPage } from './leeqr.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ComentareventoPageRoutingModule
+    LeeqrPageRoutingModule
   ],
-  declarations: [ComentareventoPage]
+  declarations: [LeeqrPage]
 })
-export class ComentareventoPageModule {}
+export class LeeqrPageModule {}

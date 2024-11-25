@@ -24,8 +24,20 @@ export class AppComponent {
     },
     {
       icon:'clipboard-outline',
-      name:'Historial de Usuario',
+      name:'Historial de Eventos',
       redirecTo:'/historialdeeventos'
+
+    },
+    {
+      icon:'ellipsis-horizontal-circle-outline',
+      name:'actualizar',
+      redirecTo:'/actualizar-evento/:id'
+
+    },
+    {
+      icon:'"camera-outline',
+      name:'Escanear QR',
+      redirecTo:'/leeqr'
 
     },
     {
@@ -33,7 +45,7 @@ export class AppComponent {
       name:'Cerrar Sesión',
       redirecTo:'/login'
 
-    }
+    },
 
   ]
 

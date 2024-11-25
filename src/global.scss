@@ -49,3 +49,9 @@
     font-weight: normal;
     font-style: normal;
 }
+
+body.scanner-active{
+    --background: transparent;
+    background: transparent;
+    --ion-background-color:transparent;
+}
