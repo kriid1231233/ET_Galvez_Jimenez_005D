@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button 
+        defaultHref="/iniestudiante"
+        text=""
+        color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="titulo">Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+  <!-- Card para mostrar los datos del perfil -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="titulo">Datos del Perfil</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <div style="text-align: center;">
+          <ion-label color="warning" style="text-align: center;"></ion-label>
+          <img *ngIf="imagen" [src]="imagen" alt="Perfil del Alumno" />
+        </div>
+      <ion-item>
+        <ion-label color="warning">Nombre:</ion-label>
+        <ion-text>{{ nombre }}</ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-label color="warning">Email:</ion-label>
+        <ion-text>{{ email }}</ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <form style="margin-top: 40%;">
+    <ion-item>
+      <ion-input class="texto"  type="text" name="nombre" label="Nombre:" 
+         labelPlacement="floating" [(ngModel)]="nombre">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input  class="texto"  type="text" name="tipo" label="Correo:" 
+         labelPlacement="floating" [(ngModel)]="email">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input class="texto"  type="text" name="color" label="Password:" 
+         labelPlacement="floating" [(ngModel)]="password">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="warning"></ion-label>
+      <input type="file" (change)="onFileSelected($event)" accept="imagen" />
+    </ion-item>
+   
+
+
+    <div style="text-align: center; margin-top: 30px;">
+      <ion-button (click)="actualizarAlumno()" shape="round"  class="boton">
+        Actualizar
+      </ion-button>
+      
+    </div>
+
+  </form>
+</ion-content>

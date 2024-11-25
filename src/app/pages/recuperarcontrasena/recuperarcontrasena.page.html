@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button 
+        defaultHref="/login"
+        text=""
+        color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title id="titulo" class="titulo">EventDuoc</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="text-align: center;" class="titulo">Restablecer Contraseña</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <!-- Correo electrónico -->
+        <ion-item>
+          <ion-input type="email" label="Correo Electrónico:" name="email" [(ngModel)]="email" labelPlacement="stacked" placeholder="Ingrese su correo electrónico..." required></ion-input>
+        </ion-item>
+
+        <!-- Nueva contraseña -->
+        <ion-item>
+          <ion-input type="password" label="Nueva Contraseña:" name="newPassword" [(ngModel)]="newPassword" labelPlacement="stacked" placeholder="Ingrese su nueva contraseña..." required minlength="8"></ion-input>
+        </ion-item>
+
+        <!-- Confirmar nueva contraseña -->
+        <ion-item>
+          <ion-input type="password" label="Confirmar Contraseña:" name="confirmPassword" [(ngModel)]="confirmPassword" labelPlacement="stacked" placeholder="Confirme su nueva contraseña..." required></ion-input>
+        </ion-item>
+
+        <!-- Opcional: Pregunta de seguridad -->
+        <ion-item>
+          <ion-input type="text" label="Respuesta de Seguridad:" name="securityAnswer" [(ngModel)]="securityAnswer" labelPlacement="stacked" placeholder="Ingrese su respuesta de seguridad..." required></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+
+    <!-- Botón de enviar -->
+    <div id="centrar">
+      <ion-button  id="bcentrar" (click)="resetPassword()" class="boton" fill="solid" shape="round">
+        Restablecer Contraseña
+      </ion-button>
+    </div>
+  </ion-card>
+</ion-content>

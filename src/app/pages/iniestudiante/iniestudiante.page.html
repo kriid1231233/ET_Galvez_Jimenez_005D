@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button class="menucolor" (click)="mostrarMenu()">
+        <ion-icon slot="end" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="titulo">EventDuoc</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true" >
+  <ion-card>
+    <swiper-container pagination="true" autoplay="true" loop="true">
+      <swiper-slide *ngFor="let image of images">
+        <img [src]="image" alt="Imagen">
+      </swiper-slide>
+    </swiper-container>
+  </ion-card>
+   
+  
+
+
+  <ion-list>
+    <ion-card *ngFor="let e of Event" (click)="buscarEvento(e)">
+      <ion-card-header>
+        <img src="{{ e.imagen }}"><br><br>
+        <ion-card-title>{{ e.nombreEvento }}</ion-card-title>
+        <ion-card-subtitle>{{ e.lugar }} | {{ e.fecha | date: 'dd/MM/yyyy' }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-thumbnail slot="start">
+        </ion-thumbnail>
+        <h2>Descripción:</h2>
+        <p>{{ e.descripcion }}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list> 
+</ion-content> 

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button 
+        defaultHref="/iniestudiante"
+        text=""
+        color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="titulo">Historial de eventos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let e of qr" >
+      <ion-label>
+        <h2>{{ e.nombreusuario }}</h2>  
+        <p>{{ e.rut }}</p>
+        <p>{{ e.nombreEvento }}</p>
+        <p>{{ e.fecha }}</p>
+        <p>{{ e.lugar }}</p> 
+      </ion-label>
+    </ion-card>
+  </ion-list>
+</ion-content>

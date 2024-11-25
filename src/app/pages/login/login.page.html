@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title id="titulo" class="titulo">Login EventDuoc</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="loginForm">
+    <div class="login-container">
+      <div class="login-box">
+        <h1 class="login-title" class="titulo">Bienvenido a EventDuoc</h1>
+        <ion-list>
+          <ion-item>
+            <ion-input placeholder="Ingrese Correo" labelPlacement="stacked" formControlName="email"></ion-input>
+          </ion-item>
+          <div id="alerta" *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty ||
+                        loginForm.get('email')?.touched)">
+            <div id="alerta" *ngIf="loginForm.get('email')?.hasError('required')">
+              *Correo Obligatorio
+            </div>
+            <div id="alerta" *ngIf="loginForm.get('email')?.hasError('minlength')">
+              *Correo debe tener minimo 8 caracteres
+            </div>
+          </div>
+          <ion-item>
+            <ion-input type="password" placeholder="Ingrese Contraseña" labelPlacement="stacked" formControlName="password"></ion-input>
+          </ion-item>
+          <div id="alerta" *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || 
+                        loginForm.get('password')?.touched)">
+            <div id="alerta" *ngIf="loginForm.get('password')?.hasError('required')">
+              *Contraseña Obligatorio
+            </div>
+            <div id="alerta" *ngIf="loginForm.get('password')?.hasError('minlength')">
+              *Contraseña debe tener minimo 8 caracteres
+            </div>
+          </div>
+          <div style="text-align: center; margin-top:30px">
+            <ion-button (click)="login()" [disabled]="!loginForm.valid" shape="round" class="boton">
+              Login
+            </ion-button> 
+          </div>
+        </ion-list>
+        <div style="text-align: center; margin-top:30px">
+          <ion-button (click)="CrearUsuario()"  shape="round" class="boton">
+            Crear Usuario
+          </ion-button> 
+        </div>
+      </div>
+    </div>
+  </form>  
+</ion-content>
+

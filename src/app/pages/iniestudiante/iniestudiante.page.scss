@@ -1,0 +1,69 @@
+#foto{
+    margin-top: 3%;
+}
+
+#centrar{
+    text-align:center;
+}
+
+#botones-contenedor {
+    display: flex; /* Flex para alinear elementos en fila */
+    justify-content: space-between; /* Distribuye los botones a cada extremo */
+    align-items: center; /* Centra verticalmente los botones */
+    width: 100%; /* Hace que el contenedor ocupe todo el ancho disponible */
+    padding: 16px;
+  }
+  
+  #botonizqui,
+  #botonderecha {
+    display: flex; /* Flex para que el botón mantenga su tamaño */
+}
+
+.boton{
+    --background: #e4b312;
+    --background-hover: #9ce0be;
+    --background-activated: #dee4ab;
+    --background-focused: #c8de05;
+  
+    --color: rgb(0, 0, 0);
+  
+    --border-radius: 15px;
+    --border-color: #000;
+    --border-style: solid;
+    --border-width: 1px;
+}
+
+.foto{
+    --border-radius: 15px;
+}
+
+.ion-card-god {
+    --background: #000;
+    --color: #e4b312;
+  }
+  
+  ion-card-title {
+    --color: #e4b312;
+  }
+  
+  ion-card-subtitle {
+    --color: #e4b312;
+  }
+
+.menucolor{
+  --color: #e4b312;
+}
+#titulo{
+  text-align: center;
+  color: #e4b312;
+}
+.titulo {
+  text-align: center;
+  font-family: 'titulo', sans-serif;
+  --color: #e4b312;
+}
+
+
+.texto {
+  font-family: 'texto', serif;
+}

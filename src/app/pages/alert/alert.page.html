@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+      <ion-back-button 
+        defaultHref="/"
+        text=""
+        color="dark"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="titulo">Entrada QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" class="titulo">Codigo Qr</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <ion-img src="assets/qr.png" id="foto" class="foto"></ion-img>
+    <ion-card-header>
+      <ion-card-title class="titulo" >Codigo Qr </ion-card-title>
+      <ion-card-subtitle class="texto">Valido solo en Auditorio</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content class="texto">
+      ¡Bienvenido! 🌟
+
+Este QR es tu pase especial para acceder al auditorio durante el evento. Por favor, muéstralo al ingresar y disfruta de una experiencia inolvidable.
+
+¡Nos alegra que estés aquí y esperamos que disfrutes cada momento del evento!
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

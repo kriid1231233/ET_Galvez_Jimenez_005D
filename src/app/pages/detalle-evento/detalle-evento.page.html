@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button 
+        defaultHref="/iniestudiante"
+        text=""
+        color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="titulo">Informacion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card >
+    <ion-card-header>
+      <img src="{{ evento.imagen }}" style="width: 400px; height: 150px;"><br><br>
+      <ion-card-title class="titulo">{{evento.nombreEvento}}</ion-card-title>
+    </ion-card-header>
+  <ion-card-content>
+    <p class="titulo">
+      Lugar: {{evento.lugar}} <br>
+      Fecha: {{evento.fecha}}
+    </p>
+  </ion-card-content>
+  <div style="text-align: center;">
+    <ion-button (click)="generarQr()"  shape="round" class="boton">
+      Registrarse al Evento
+    </ion-button>
+</div>
+  </ion-card>
+  
+  <ion-card class="ion-text-center">
+    <ion-card-content>
+     <qrcode [qrdata]=qrdata [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

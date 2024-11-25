@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button 
+        defaultHref="/"
+        text=""
+        color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="titulo">Contactanos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="titulo">Contáctanos!</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content class="texto">
+      
+      <ion-list>
+        <ion-item>
+          <ion-input type="text" label="Nombre:" name="nom" [(ngModel)]="nom" labelPlacement="stacked" placeholder="Ingrese su Nombre..."></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="email" label="Email:" name="email" [(ngModel)]="email" labelPlacement="stacked" placeholder="Ingrese su Correo..."></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="text" label="Teléfono:" name="fono" [(ngModel)]="fono" labelPlacement="stacked" placeholder="Ingrese su Teléfono..."></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" label="descripcion:" name="descripcion" [(ngModel)]="descripcion" labelPlacement="stacked" placeholder="Ingrese su peticion"></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+    <div id="centrar">
+      <ion-button id="bcentrar" class="texto" (click)="mensajecontacto()" class="boton" fill="solid" shape="round">
+          enviar solicitud
+      </ion-button>
+    </div>
+  </ion-card>
+</ion-content>

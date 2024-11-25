@@ -1,0 +1,81 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button 
+        defaultHref="/iniestudiante"
+        text=""
+        color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="titulo">EventDuoc</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card-header>
+    <ion-card-title class="titulo">Registro a Evento</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <form (ngSubmit)="registerEvent()" #eventForm="ngForm">
+      <ion-list class="texto">
+        <ion-item>
+          <ion-label position="stacked">Tipo de Evento:</ion-label>
+          <ion-select
+            name="tipo" 
+            [(ngModel)]="event.tipo"
+            #tipo="ngModel"
+            [ngClass]="{'error': tipo.invalid && tipo.touched}"
+            placeholder="Seleccione el Evento"
+            required>
+            <ion-select-option value="evento1">Hackathon CITT</ion-select-option>
+            <ion-select-option value="evento2">Seminario de Tendencias</ion-select-option>
+            <ion-select-option value="evento3">Día de la Innovación</ion-select-option>
+            <ion-select-option value="evento4">Otro</ion-select-option>
+            <!-- Añade más opciones según sea necesario -->
+          </ion-select>
+          <ion-note color="danger" *ngIf="tipo.invalid && tipo.touched">
+            El tipo de evento es requerido.
+          </ion-note>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Lugar del Evento:</ion-label>
+          <ion-input 
+            type="text" 
+            name="lugar" 
+            [(ngModel)]="event.lugar" 
+            #lugar="ngModel" 
+            [ngClass]="{'error': lugar.invalid && lugar.touched}"
+            placeholder="Ingrese el lugar del evento..."
+            required>
+          </ion-input>
+          <ion-note color="danger" *ngIf="lugar.invalid && lugar.touched">
+            El lugar es requerido.
+          </ion-note>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Carrera del Estudiante:</ion-label>
+          <ion-select 
+            name="carrera" 
+            [(ngModel)]="event.carrera" 
+            #carrera="ngModel" 
+            [ngClass]="{'error': carrera.invalid && carrera.touched}"
+            placeholder="Seleccione la carrera del estudiante"
+            required>
+            <ion-select-option value="informatica">Informática</ion-select-option>
+            <ion-select-option value="administracion">Administración</ion-select-option>
+            <ion-select-option value="diseño">Diseño</ion-select-option>
+            <ion-select-option value="ingenieria">Ingeniería</ion-select-option>
+            <!-- Añade más opciones según sea necesario -->
+          </ion-select>
+          <ion-note color="danger" *ngIf="carrera.invalid && carrera.touched">
+            La carrera es requerida.
+          </ion-note>
+        </ion-item>
+      </ion-list>
+
+      <ion-button expand="block" type="submit" [disabled]="eventForm.invalid" shape="round" class="boton">Confirmar</ion-button>
+    </form>
+    <ion-toast *ngIf="showToast" [message]="toastMessage" duration="2000" color="success"></ion-toast>
+  </ion-card-content>
+</ion-content>

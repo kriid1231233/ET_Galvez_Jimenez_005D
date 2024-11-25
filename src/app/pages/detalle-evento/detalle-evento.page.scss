@@ -1,0 +1,20 @@
+.boton {
+    --background: #e4b312;
+    --background-hover: #9ce0be;
+    --background-activated: #dee4ab;
+    --background-focused: #c8de05;
+    --color: rgb(0, 0, 0);
+    --border-radius: 15px;
+    --border-color: #000;
+    --border-style: solid;
+    margin-top: 10px;
+  }
+  #titulo{
+    text-align: center;
+    color: #e4b312;
+}
+.titulo {
+  text-align: center;
+  font-family: 'titulo', sans-serif;
+  --color: #e4b312;
+}
